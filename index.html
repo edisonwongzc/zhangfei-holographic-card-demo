@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="张飞互动式三国人物卡作品展示" />
+    <title>张飞 · 翼德</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="exhibition" class="exhibition">
+      <article id="character-card" class="card-stage" aria-label="张飞人物卡" tabindex="0">
+        <div class="card-shadow" aria-hidden="true"></div>
+        <div class="card-rig">
+          <section class="card-face card-face--front" aria-label="张飞正面人物卡">
+            <div class="card-base-surface">
+              <img class="card-base-art" src="assets/zhangfei-card.png" alt="持蛇矛、身穿暗金甲胄的张飞" />
+              <div class="card-shade" aria-hidden="true"></div>
+              <div class="card-base-specular" aria-hidden="true"></div>
+            </div>
+            <img class="card-foreground" src="assets/zhangfei-foreground.png" alt="" aria-hidden="true" />
+            <div class="card-frame" aria-hidden="true"></div>
+            <div class="card-copy" aria-hidden="true">
+              <span>蜀 · 01</span>
+              <strong>翼德</strong>
+            </div>
+          </section>
+          <section class="card-face card-face--back" aria-label="三国卡背">
+            <img class="card-art" src="assets/zhangfei-card-back.png" alt="三国主题暗金卡背" />
+            <div class="card-shade" aria-hidden="true"></div>
+            <div class="card-frame" aria-hidden="true"></div>
+            <div class="card-back-specular" aria-hidden="true"></div>
+          </section>
+          <div class="card-edge card-edge--top" aria-hidden="true"></div>
+          <div class="card-edge card-edge--right" aria-hidden="true"></div>
+          <div class="card-edge card-edge--bottom" aria-hidden="true"></div>
+          <div class="card-edge card-edge--left" aria-hidden="true"></div>
+        </div>
+      </article>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
