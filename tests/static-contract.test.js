@@ -52,6 +52,14 @@ test('styles include responsive and reduced-motion safeguards', async () => {
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
 });
 
+test('card presentation has no visible frame strokes', async () => {
+  const css = await read('styles.css');
+
+  assert.doesNotMatch(css, /\.card-face\s*\{[^}]*\bborder\s*:/);
+  assert.match(css, /\.card-frame\s*\{\s*display:\s*none/);
+  assert.doesNotMatch(css, /\.card-frame::(?:before|after)/);
+});
+
 test('runtime uses accumulated drag, pointer capture, deterministic material, and split layer motion', async () => {
   const app = await read('app.js');
 
