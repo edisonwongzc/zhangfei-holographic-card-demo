@@ -63,3 +63,13 @@ test('a subtle left-right tilt creates a continuous visible reflection change', 
   assert.notEqual(subtleTilt.offsetX, rest.offsetX);
   assert.notEqual(subtleTilt.offsetY, rest.offsetY);
 });
+
+test('gentle hover tilts reveal gloss on both the left and right sides', () => {
+  const rest = cardMath.calculateSpecular({ rotateX: 0, rotateY: 0, translateZ: 0 }, 'front');
+  const left = cardMath.calculateSpecular({ rotateX: 0, rotateY: -2, translateZ: 0 }, 'front');
+  const right = cardMath.calculateSpecular({ rotateX: 0, rotateY: 2, translateZ: 0 }, 'front');
+
+  assert.ok(left.strength >= rest.strength + 0.012);
+  assert.ok(right.strength >= rest.strength + 0.012);
+  assert.notEqual(left.offsetX, right.offsetX);
+});
