@@ -39,7 +39,6 @@ body {
   --foreground-shadow-y: 4px;
   --foreground-ambient-x: 3px;
   --foreground-ambient-y: 9px;
-  --art-crop-scale: 1.08;
   display: grid;
   min-height: 100svh;
   place-items: center;
@@ -155,12 +154,10 @@ body {
 
 .card-base-art {
   filter: saturate(0.76) contrast(1.06) brightness(0.87);
-  transform: scale(var(--art-crop-scale));
 }
 
 .card-face--back .card-art {
   filter: saturate(0.72) contrast(1.03) brightness(0.82);
-  transform: scale(var(--art-crop-scale));
 }
 
 .card-shade {
@@ -195,7 +192,7 @@ body {
   filter:
     drop-shadow(var(--foreground-shadow-x) var(--foreground-shadow-y) 2px #000a)
     drop-shadow(var(--foreground-ambient-x) var(--foreground-ambient-y) 10px #0009);
-  transform: translate3d(var(--foreground-x), var(--foreground-y), 15px) scale(var(--art-crop-scale));
+  transform: translate3d(var(--foreground-x), var(--foreground-y), 15px);
   transform-style: preserve-3d;
   transition: filter 120ms ease-out;
   will-change: transform, filter;

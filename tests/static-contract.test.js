@@ -17,7 +17,7 @@ test('page exposes the exhibition and accessible six-surface CSS 3D card rig', a
   assert.match(html, /class="card-face card-face--back"/);
   assert.equal((html.match(/class="card-edge card-edge--/g) || []).length, 4);
   assert.match(html, /class="card-base-surface"/);
-  assert.match(html, /class="card-base-art" src="assets\/zhangfei-card\.png"/);
+  assert.match(html, /class="card-base-art" src="assets\/zhangfei-card-frameless\.png"/);
   assert.match(html, /class="card-base-specular"/);
   assert.match(html, /class="card-foreground" src="assets\/zhangfei-foreground\.png"/);
   assert.match(html, /assets\/zhangfei-card-back\.png/);
@@ -58,9 +58,7 @@ test('card presentation has no visible frame strokes', async () => {
   assert.doesNotMatch(css, /\.card-face\s*\{[^}]*\bborder\s*:/);
   assert.match(css, /\.card-frame\s*\{\s*display:\s*none/);
   assert.doesNotMatch(css, /\.card-frame::(?:before|after)/);
-  assert.match(css, /--art-crop-scale:\s*1\.08/);
-  assert.match(css, /\.card-base-art\s*\{[\s\S]*transform:\s*scale\(var\(--art-crop-scale\)\)/);
-  assert.match(css, /\.card-foreground\s*\{[\s\S]*scale\(var\(--art-crop-scale\)\)/);
+  assert.doesNotMatch(css, /--art-crop-scale|scale\(var\(--art-crop-scale\)\)/);
 });
 
 test('runtime uses accumulated drag, pointer capture, deterministic material, and split layer motion', async () => {
