@@ -58,6 +58,9 @@ test('card presentation has no visible frame strokes', async () => {
   assert.doesNotMatch(css, /\.card-face\s*\{[^}]*\bborder\s*:/);
   assert.match(css, /\.card-frame\s*\{\s*display:\s*none/);
   assert.doesNotMatch(css, /\.card-frame::(?:before|after)/);
+  assert.match(css, /--art-crop-scale:\s*1\.08/);
+  assert.match(css, /\.card-base-art\s*\{[\s\S]*transform:\s*scale\(var\(--art-crop-scale\)\)/);
+  assert.match(css, /\.card-foreground\s*\{[\s\S]*scale\(var\(--art-crop-scale\)\)/);
 });
 
 test('runtime uses accumulated drag, pointer capture, deterministic material, and split layer motion', async () => {
